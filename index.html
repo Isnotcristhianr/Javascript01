@@ -1,0 +1,161 @@
+<html>
+
+<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/css/botones.css" rel="stylesheet">
+
+
+<script src="assets/js/est.js"></script>
+<script src="assets/js/funcciones.js"></script>
+<script src="assets/js/jqueryv3.6.0.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+
+</head>
+
+<body>
+
+    <h2>Primera Clase JS</h2>
+
+    <p>Bienvenidos</p>
+
+    <label># de cédula:</label>
+    <input type="text" id="ced" value="1004072672" maxlength="10">
+    <br>
+    <p id="demo"></p>
+    <br>
+    <input value="Aleatorio" type="button" id="random" class="btn btn-success">
+
+    <table>
+
+        <tr>
+            <td><input value="1" onclick="number(1)" type="button" id="n1" class="style"> </td>
+            <td><input value="2" onclick="number(2)" type="button" id="n2" class="style"> </td>
+            <td><input value="3" onclick="number(3)" type="button" id="n3" class="style"> </td>
+        </tr>
+
+        <tr>
+            <td><input value="4" onclick="number(4)" type="button" id="n4" class="style"> </td>
+            <td><input value="5" onclick="number(5)" type="button" id="n5" class="style"> </td>
+            <td><input value="6" onclick="number(6)" type="button" id="n6" class="style"> </td>
+        </tr>
+        <tr>
+            <td> <input value="7" onclick="number(7)" type="button" id="n7" class="style"></td>
+            <td> <input value="8" onclick="number(8)" type="button" id="n8" class="style"></td>
+            <td> <input value="9" onclick="number(9)" type="button" id="n9" class="style"></td>
+        </tr>
+        <tr>
+            <td> <input value="0" onclick="number(0)" type="button" id="n0" class="style"></td>
+
+        </tr>
+    </table>
+    <p id="demo1"></p>
+    <div id="rbcb">
+
+        <h4>Radio Buttons</h4>
+        <input type="radio" name="colorRB" value="Amarillo">Amarillo <br>
+        <input type="radio" name="colorRB" value="Azul">Azul <br>
+        <input type="radio" name="colorRB" value="Rojo">Rojo <br>
+        <input type="radio" name="colorRB" value="Verde">Verde <br>
+        <input type="radio" name="colorRB" value="Negro">Negro <br>
+
+        <br>
+        <h4>Combo Box</h4>
+
+
+        <select id="cbx">
+            <option type="radio" value="Amarillo" name="colorCB">Amarillo</option>
+            <option value="Azul" name="colorCB">Azul</option>
+            <option value="Rojo" name="colorCB">Rojo</option>
+            <option value="Verde" name="colorCB">Verde</option>
+            <option value="Negro" name="colorCB">Negro</option>
+        </select>
+
+        <br><br>
+        <button type="button" onclick="displayRB()" class="btn btn-success">EJECUTAR COLORES RB</button>
+        <button type="button" onclick="displayCB()" class="btn btn-success">EJECUTAR COLORES CB</button>
+
+        <br>
+        <h5>Salida colores: ⇩</h5>
+        <marquee id="demo3" style="max-width: 450px;"></marquee>
+        <br>
+
+    </div>
+
+
+
+    
+    
+    <br>
+    <p id="demo2"></p>
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            $('#random').click(function () {
+                alert("Esta es una acción del boton");
+            });
+
+            $('#autos').change(function () {
+                console.log($("#autos").val());
+                saludoCambio();
+
+            });
+
+        });
+
+
+
+        let resp;
+        let e = 15;//window.prompt("Ingrese su edad");
+
+
+        const miEst = new est(e);
+
+        document.getElementById("demo").innerHTML = "Ud. " + miEst.ingresar();
+
+        miEst.evaCedula();
+
+        document.getElementById("ced").addEventListener("change", avisoCambio);
+
+
+
+        window.addEventListener("load", function () {
+            document.getElementById("cedV").addEventListener("keypress", soloNumeros, false);
+        });
+
+
+
+
+    </script>
+
+
+    <div id="saludo">
+
+    </div>
+
+    <input type="text" id="cedV" value="" maxlength="10" placeholder="# de cédula">
+
+    <h3>Evento desde html</h3>
+    <input value="" onchange="saludoCambio();" type="text" class="style">
+    <input value="" id="cv" placeholder="Cédula " onkeypress="soloNumeros();" type="text">
+
+    <br>
+
+    <select id="autos">
+        <option value="chevrolet">Chevrolet</option>
+        <option value="toyota">Toyota</option>
+        <option value="jettour">Jettour</option>
+        <option value="lexus">Lexus</option>
+    </select>
+
+
+</body>
+
+<footer>
+</footer>
+
+</html>
